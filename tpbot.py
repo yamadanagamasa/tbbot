@@ -16,9 +16,9 @@ auth.set_access_token(access_token, access_token_secret)
 
 api = tweepy.API(auth)
 
-@sched.scheduled_job('interval', minutes=3)
+@sched.scheduled_job('interval', minutes=30)
 def timed_job():
-    for status in api.search(q='ごはん', count=100):
+    for status in api.search(q='', count=50):
         tweet_id = status.id
 # 例外処理をする
         try:
