@@ -21,11 +21,11 @@ def timed_job():
     for status in api.search(q='ごはん', count=100):
         tweet_id = status.id
 # 例外処理をする
-    try:
+        try:
 # いいね実行
-        api.create_favorite(tweet_id)
-        print("ok")
-    except:
-        print('error')
+            api.create_favorite(tweet_id)
+            print("ok")
+        except:
+            print('error')
 
 sched.start()
