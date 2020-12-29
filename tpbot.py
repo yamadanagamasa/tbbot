@@ -19,7 +19,7 @@ api = tweepy.API(auth)
 @sched.scheduled_job('interval', minutes=3)
 def timed_job():
     for status in api.search(q='ごはん', count=100):
-    tweet_id = status.id
+        tweet_id = status.id
 # 例外処理をする
     try:
 # いいね実行
